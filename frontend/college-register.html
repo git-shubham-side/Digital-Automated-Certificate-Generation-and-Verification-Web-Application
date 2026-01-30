@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Your College - TrustCert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background: #0a0a0f;
+        overflow-x: hidden;
+      }
+
+      /* Gradient Mesh Background */
+      .gradient-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.4;
+      }
+
+      .gradient-bg::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background:
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(99, 102, 241, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(168, 85, 247, 0.15) 0%,
+            transparent 50%
+          );
+        animation: gradientShift 20s ease infinite;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(-5%, -5%) scale(1.1);
+        }
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .form-input {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        outline: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      }
+
+      .step-indicator {
+        position: relative;
+      }
+
+      .step-indicator::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 0;
+      }
+
+      .step {
+        position: relative;
+        z-index: 1;
+      }
+
+      .step.active .step-circle {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        border-color: #6366f1;
+      }
+
+      .step.completed .step-circle {
+        background: #10b981;
+        border-color: #10b981;
+      }
+
+      .step-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+      }
+
+      .file-upload {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .file-upload:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #0a0a0f;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #6366f1, #8b5cf6);
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body class="text-slate-200">
+    <!-- Animated Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="relative z-10 px-6 md:px-12 py-6 flex justify-between items-center"
+    >
+      <a href="e-certificate-portal.html" class="flex items-center gap-3">
+        <div
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center"
+        >
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            />
+          </svg>
+        </div>
+        <span class="text-xl font-bold">TrustCert</span>
+      </a>
+
+      <div class="flex gap-3 items-center">
+        <span class="text-sm text-slate-400">Already have an account?</span>
+        <a
+          href="login.html"
+          class="px-6 py-2.5 btn-secondary rounded-lg text-sm font-medium"
+        >
+          Login
+        </a>
+      </div>
+    </nav>
+
+    <!-- Registration Form -->
+    <section class="relative z-10 px-6 py-12 min-h-screen">
+      <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Register Your College
+          </h1>
+          <p class="text-slate-400 text-lg">
+            Join hundreds of institutions using TrustCert for digital
+            certification
+          </p>
+        </div>
+
+        <!-- Step Indicator -->
+        <div class="step-indicator mb-12">
+          <div class="flex justify-between items-center relative">
+            <div class="step active flex-1">
+              <div class="step-circle">
+                <span class="text-sm font-bold">1</span>
+              </div>
+              <div class="text-xs mt-2 text-center font-medium">
+                College Info
+              </div>
+            </div>
+            <div class="step flex-1">
+              <div class="step-circle">
+                <span class="text-sm font-bold">2</span>
+              </div>
+              <div class="text-xs mt-2 text-center font-medium">
+                Admin Details
+              </div>
+            </div>
+            <div class="step flex-1">
+              <div class="step-circle">
+                <span class="text-sm font-bold">3</span>
+              </div>
+              <div class="text-xs mt-2 text-center font-medium">
+                Verification
+              </div>
+            </div>
+            <div class="step flex-1">
+              <div class="step-circle">
+                <span class="text-sm font-bold">4</span>
+              </div>
+              <div class="text-xs mt-2 text-center font-medium">Complete</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="glass rounded-2xl p-8 md:p-12">
+          <form id="registrationForm">
+            <!-- Step 1: College Information -->
+            <div id="step1" class="step-content">
+              <h2 class="text-2xl font-bold mb-6">College Information</h2>
+
+              <div class="space-y-6">
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >College Name *</label
+                  >
+                  <input
+                    type="text"
+                    name="collegeName"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-lg text-white"
+                    placeholder="e.g., Savitribai Phule Pune University"
+                  />
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >College Code *</label
+                    >
+                    <input
+                      type="text"
+                      name="collegeCode"
+                      required
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., SPPU-001"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Establishment Year *</label
+                    >
+                    <input
+                      type="number"
+                      name="establishmentYear"
+                      required
+                      min="1800"
+                      max="2026"
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., 1949"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >Affiliation/University *</label
+                  >
+                  <input
+                    type="text"
+                    name="affiliation"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-lg text-white"
+                    placeholder="e.g., UGC, AICTE, State University"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >Complete Address *</label
+                  >
+                  <textarea
+                    name="address"
+                    required
+                    rows="3"
+                    class="form-input w-full px-4 py-3 rounded-lg text-white resize-none"
+                    placeholder="Enter complete college address with pincode"
+                  ></textarea>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div>
+                    <label class="block text-sm font-medium mb-2">City *</label>
+                    <input
+                      type="text"
+                      name="city"
+                      required
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., Pune"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >State *</label
+                    >
+                    <input
+                      type="text"
+                      name="state"
+                      required
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., Maharashtra"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Pincode *</label
+                    >
+                    <input
+                      type="text"
+                      name="pincode"
+                      required
+                      pattern="[0-9]{6}"
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., 411007"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Official Email *</label
+                    >
+                    <input
+                      type="email"
+                      name="collegeEmail"
+                      required
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., admin@college.edu.in"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Contact Number *</label
+                    >
+                    <input
+                      type="tel"
+                      name="collegePhone"
+                      required
+                      pattern="[0-9]{10}"
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., 9876543210"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >College Website</label
+                  >
+                  <input
+                    type="url"
+                    name="website"
+                    class="form-input w-full px-4 py-3 rounded-lg text-white"
+                    placeholder="e.g., https://www.college.edu.in"
+                  />
+                </div>
+              </div>
+
+              <div class="flex justify-end mt-8">
+                <button
+                  type="button"
+                  onclick="nextStep(1)"
+                  class="btn-primary px-8 py-3 rounded-lg font-semibold"
+                >
+                  Next Step →
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Admin Details -->
+            <div id="step2" class="step-content hidden">
+              <h2 class="text-2xl font-bold mb-6">Admin Account Details</h2>
+
+              <div class="space-y-6">
+                <div class="glass rounded-xl p-4 border border-indigo-500/30">
+                  <div class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <div class="text-sm text-slate-300">
+                      This person will have full administrative access to manage
+                      certificates, users, and settings.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >First Name *</label
+                    >
+                    <input
+                      type="text"
+                      name="adminFirstName"
+                      required
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., Rajesh"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Last Name *</label
+                    >
+                    <input
+                      type="text"
+                      name="adminLastName"
+                      required
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., Kumar"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >Designation *</label
+                  >
+                  <input
+                    type="text"
+                    name="designation"
+                    required
+                    class="form-input w-full px-4 py-3 rounded-lg text-white"
+                    placeholder="e.g., HOD, Principal, Dean"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >Department</label
+                  >
+                  <input
+                    type="text"
+                    name="department"
+                    class="form-input w-full px-4 py-3 rounded-lg text-white"
+                    placeholder="e.g., Computer Science, Administration"
+                  />
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Admin Email *</label
+                    >
+                    <input
+                      type="email"
+                      name="adminEmail"
+                      required
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., rajesh@college.edu.in"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Mobile Number *</label
+                    >
+                    <input
+                      type="tel"
+                      name="adminPhone"
+                      required
+                      pattern="[0-9]{10}"
+                      class="form-input w-full px-4 py-3 rounded-lg text-white"
+                      placeholder="e.g., 9876543210"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >Create Password *</label
+                  >
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    minlength="8"
+                    class="form-input w-full px-4 py-3 rounded-lg text-white"
+                    placeholder="Minimum 8 characters"
+                  />
+                  <p class="text-xs text-slate-500 mt-2">
+                    Use at least 8 characters with a mix of letters, numbers &
+                    symbols
+                  </p>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >Confirm Password *</label
+                  >
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    required
+                    minlength="8"
+                    class="form-input w-full px-4 py-3 rounded-lg text-white"
+                    placeholder="Re-enter your password"
+                  />
+                </div>
+              </div>
+
+              <div class="flex justify-between mt-8">
+                <button
+                  type="button"
+                  onclick="prevStep(2)"
+                  class="btn-secondary px-8 py-3 rounded-lg font-semibold"
+                >
+                  ← Previous
+                </button>
+                <button
+                  type="button"
+                  onclick="nextStep(2)"
+                  class="btn-primary px-8 py-3 rounded-lg font-semibold"
+                >
+                  Next Step →
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Verification Documents -->
+            <div id="step3" class="step-content hidden">
+              <h2 class="text-2xl font-bold mb-6">Document Verification</h2>
+
+              <div class="space-y-6">
+                <div class="glass rounded-xl p-4 border border-yellow-500/30">
+                  <div class="flex items-start gap-3">
+                    <svg
+                      class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                      />
+                    </svg>
+                    <div class="text-sm text-slate-300">
+                      Upload official documents to verify your institution.
+                      Accepted formats: PDF, JPG, PNG (Max 5MB each)
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >College Registration Certificate *</label
+                  >
+                  <div
+                    class="file-upload form-input w-full px-4 py-8 rounded-lg text-center border-2 border-dashed"
+                  >
+                    <input
+                      type="file"
+                      name="registrationCert"
+                      accept=".pdf,.jpg,.jpeg,.png"
+                      class="hidden"
+                      id="regCert"
+                      required
+                    />
+                    <label for="regCert" class="cursor-pointer">
+                      <svg
+                        class="w-12 h-12 text-slate-400 mx-auto mb-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                        />
+                      </svg>
+                      <div class="text-slate-400 text-sm">
+                        <span class="text-indigo-400 font-medium"
+                          >Click to upload</span
+                        >
+                        or drag and drop
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        PDF, JPG or PNG (Max 5MB)
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >AICTE/UGC Approval Letter *</label
+                  >
+                  <div
+                    class="file-upload form-input w-full px-4 py-8 rounded-lg text-center border-2 border-dashed"
+                  >
+                    <input
+                      type="file"
+                      name="approvalLetter"
+                      accept=".pdf,.jpg,.jpeg,.png"
+                      class="hidden"
+                      id="approvalLetter"
+                      required
+                    />
+                    <label for="approvalLetter" class="cursor-pointer">
+                      <svg
+                        class="w-12 h-12 text-slate-400 mx-auto mb-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                        />
+                      </svg>
+                      <div class="text-slate-400 text-sm">
+                        <span class="text-indigo-400 font-medium"
+                          >Click to upload</span
+                        >
+                        or drag and drop
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        PDF, JPG or PNG (Max 5MB)
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >Admin ID Proof (Aadhaar/PAN/Driving License) *</label
+                  >
+                  <div
+                    class="file-upload form-input w-full px-4 py-8 rounded-lg text-center border-2 border-dashed"
+                  >
+                    <input
+                      type="file"
+                      name="adminId"
+                      accept=".pdf,.jpg,.jpeg,.png"
+                      class="hidden"
+                      id="adminId"
+                      required
+                    />
+                    <label for="adminId" class="cursor-pointer">
+                      <svg
+                        class="w-12 h-12 text-slate-400 mx-auto mb-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                        />
+                      </svg>
+                      <div class="text-slate-400 text-sm">
+                        <span class="text-indigo-400 font-medium"
+                          >Click to upload</span
+                        >
+                        or drag and drop
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        PDF, JPG or PNG (Max 5MB)
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-2"
+                    >College Logo (Optional)</label
+                  >
+                  <div
+                    class="file-upload form-input w-full px-4 py-8 rounded-lg text-center border-2 border-dashed"
+                  >
+                    <input
+                      type="file"
+                      name="collegeLogo"
+                      accept=".jpg,.jpeg,.png"
+                      class="hidden"
+                      id="collegeLogo"
+                    />
+                    <label for="collegeLogo" class="cursor-pointer">
+                      <svg
+                        class="w-12 h-12 text-slate-400 mx-auto mb-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <div class="text-slate-400 text-sm">
+                        <span class="text-indigo-400 font-medium"
+                          >Click to upload</span
+                        >
+                        or drag and drop
+                      </div>
+                      <div class="text-xs text-slate-500 mt-1">
+                        PNG or JPG (Recommended: 500x500px)
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-between mt-8">
+                <button
+                  type="button"
+                  onclick="prevStep(3)"
+                  class="btn-secondary px-8 py-3 rounded-lg font-semibold"
+                >
+                  ← Previous
+                </button>
+                <button
+                  type="button"
+                  onclick="nextStep(3)"
+                  class="btn-primary px-8 py-3 rounded-lg font-semibold"
+                >
+                  Next Step →
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 4: Review & Submit -->
+            <div id="step4" class="step-content hidden">
+              <h2 class="text-2xl font-bold mb-6">Review & Submit</h2>
+
+              <div class="space-y-6">
+                <div class="glass rounded-xl p-6">
+                  <h3 class="font-semibold text-lg mb-4 text-indigo-300">
+                    College Information
+                  </h3>
+                  <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span class="text-slate-500">College Name:</span>
+                      <div class="font-medium mt-1" id="review-collegeName">
+                        -
+                      </div>
+                    </div>
+                    <div>
+                      <span class="text-slate-500">College Code:</span>
+                      <div class="font-medium mt-1" id="review-collegeCode">
+                        -
+                      </div>
+                    </div>
+                    <div>
+                      <span class="text-slate-500">Email:</span>
+                      <div class="font-medium mt-1" id="review-collegeEmail">
+                        -
+                      </div>
+                    </div>
+                    <div>
+                      <span class="text-slate-500">Phone:</span>
+                      <div class="font-medium mt-1" id="review-collegePhone">
+                        -
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="glass rounded-xl p-6">
+                  <h3 class="font-semibold text-lg mb-4 text-indigo-300">
+                    Admin Details
+                  </h3>
+                  <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span class="text-slate-500">Name:</span>
+                      <div class="font-medium mt-1" id="review-adminName">
+                        -
+                      </div>
+                    </div>
+                    <div>
+                      <span class="text-slate-500">Designation:</span>
+                      <div class="font-medium mt-1" id="review-designation">
+                        -
+                      </div>
+                    </div>
+                    <div>
+                      <span class="text-slate-500">Email:</span>
+                      <div class="font-medium mt-1" id="review-adminEmail">
+                        -
+                      </div>
+                    </div>
+                    <div>
+                      <span class="text-slate-500">Phone:</span>
+                      <div class="font-medium mt-1" id="review-adminPhone">
+                        -
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="glass rounded-xl p-6">
+                  <h3 class="font-semibold text-lg mb-4 text-indigo-300">
+                    Documents Uploaded
+                  </h3>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex items-center gap-2 text-green-400">
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      College Registration Certificate
+                    </div>
+                    <div class="flex items-center gap-2 text-green-400">
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      AICTE/UGC Approval Letter
+                    </div>
+                    <div class="flex items-center gap-2 text-green-400">
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      Admin ID Proof
+                    </div>
+                  </div>
+                </div>
+
+                <div class="glass rounded-xl p-6 border border-indigo-500/30">
+                  <div class="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="termsAccept"
+                      required
+                      class="mt-1"
+                    />
+                    <label for="termsAccept" class="text-sm text-slate-300">
+                      I hereby declare that all the information provided is true
+                      and accurate. I agree to the
+                      <a href="#" class="text-indigo-400 hover:text-indigo-300"
+                        >Terms & Conditions</a
+                      >
+                      and
+                      <a href="#" class="text-indigo-400 hover:text-indigo-300"
+                        >Privacy Policy</a
+                      >
+                      of TrustCert.
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-between mt-8">
+                <button
+                  type="button"
+                  onclick="prevStep(4)"
+                  class="btn-secondary px-8 py-3 rounded-lg font-semibold"
+                >
+                  ← Previous
+                </button>
+                <button
+                  type="submit"
+                  class="btn-primary px-12 py-3 rounded-lg font-semibold flex items-center gap-2"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Submit Registration
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Help Section -->
+        <div class="mt-8 text-center">
+          <p class="text-slate-400 text-sm">
+            Need help? Contact us at
+            <a
+              href="mailto:support@trustcert.com"
+              class="text-indigo-400 hover:text-indigo-300"
+              >support@trustcert.com</a
+            >
+            or call
+            <a
+              href="tel:+911234567890"
+              class="text-indigo-400 hover:text-indigo-300"
+              >+91 123 456 7890</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let currentStep = 1;
+
+      function nextStep(step) {
+        // Validate current step
+        const currentForm = document.getElementById(`step${step}`);
+        const inputs = currentForm.querySelectorAll(
+          "input[required], textarea[required]",
+        );
+        let isValid = true;
+
+        inputs.forEach((input) => {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            isValid = false;
+          }
+        });
+
+        if (!isValid) return;
+
+        // Hide current step
+        document.getElementById(`step${step}`).classList.add("hidden");
+
+        // Show next step
+        const nextStepNum = step + 1;
+        document
+          .getElementById(`step${nextStepNum}`)
+          .classList.remove("hidden");
+
+        // Update step indicators
+        updateStepIndicators(nextStepNum);
+
+        // If moving to step 4, populate review
+        if (nextStepNum === 4) {
+          populateReview();
+        }
+
+        currentStep = nextStepNum;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function prevStep(step) {
+        // Hide current step
+        document.getElementById(`step${step}`).classList.add("hidden");
+
+        // Show previous step
+        const prevStepNum = step - 1;
+        document
+          .getElementById(`step${prevStepNum}`)
+          .classList.remove("hidden");
+
+        // Update step indicators
+        updateStepIndicators(prevStepNum);
+
+        currentStep = prevStepNum;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function updateStepIndicators(activeStep) {
+        const steps = document.querySelectorAll(".step");
+        steps.forEach((step, index) => {
+          const stepNum = index + 1;
+          step.classList.remove("active", "completed");
+
+          if (stepNum === activeStep) {
+            step.classList.add("active");
+          } else if (stepNum < activeStep) {
+            step.classList.add("completed");
+          }
+        });
+      }
+
+      function populateReview() {
+        const form = document.getElementById("registrationForm");
+        const formData = new FormData(form);
+
+        document.getElementById("review-collegeName").textContent =
+          formData.get("collegeName") || "-";
+        document.getElementById("review-collegeCode").textContent =
+          formData.get("collegeCode") || "-";
+        document.getElementById("review-collegeEmail").textContent =
+          formData.get("collegeEmail") || "-";
+        document.getElementById("review-collegePhone").textContent =
+          formData.get("collegePhone") || "-";
+
+        const adminName = `${formData.get("adminFirstName")} ${formData.get("adminLastName")}`;
+        document.getElementById("review-adminName").textContent =
+          adminName || "-";
+        document.getElementById("review-designation").textContent =
+          formData.get("designation") || "-";
+        document.getElementById("review-adminEmail").textContent =
+          formData.get("adminEmail") || "-";
+        document.getElementById("review-adminPhone").textContent =
+          formData.get("adminPhone") || "-";
+      }
+
+      // File upload preview
+      document.querySelectorAll('input[type="file"]').forEach((input) => {
+        input.addEventListener("change", function () {
+          const label = this.parentElement.querySelector("label");
+          if (this.files.length > 0) {
+            const fileName = this.files[0].name;
+            label.querySelector(".text-slate-400").innerHTML =
+              `<span class="text-green-400 font-medium">✓ ${fileName}</span>`;
+          }
+        });
+      });
+
+      // Form submission
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Check if terms are accepted
+          if (!document.getElementById("termsAccept").checked) {
+            alert("Please accept the Terms & Conditions");
+            return;
+          }
+
+          // Show success message (in real app, this would submit to backend)
+          alert(
+            "Registration submitted successfully! You will receive a confirmation email within 24-48 hours.",
+          );
+
+          // Redirect to home or login page
+          // window.location.href = 'e-certificate-portal.html';
+        });
+    </script>
+  </body>
+</html>

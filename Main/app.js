@@ -58,6 +58,20 @@ app.post("/generate-certificate", (req, res) => {
   });
 });
 
+app.get("/login", (req, res) => {
+  res.render("../views/login");
+});
+app.get("/register", (req, res) => {
+  res.render("../views/college-regestration");
+});
+
+app.get("/certificate-type", (req, res) => {
+  res.render("../views/certificate-type");
+});
+app.get("/preview-certificate", (req, res) => {
+  res.render("../views/certificate-prev");
+});
+
 //Excel to JSON API
 app.post("/excel-to-json", upload.single("file"), (req, res) => {
   const workbook = XLSX.readFile(req.file.path);
