@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>College Event's E-Certificate Generator & Validator</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css" />
+
+    <style>
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      .animate-fadeUp {
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-4px) scale(1.02);
+      }
+
+      .btn-press:active {
+        transform: scale(0.97);
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-slate-200 min-h-screen flex flex-col">
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow flex items-center justify-center">
+      <div class="w-full max-w-5xl px-6 animate-fadeUp">
+        <!-- TITLE -->
+        <div class="text-center mb-14">
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-widest">
+            College Event's
+          </h1>
+
+          <h2 class="text-3xl md:text-4xl font-bold mt-2">
+            E-Certificate Generator & Validator
+          </h2>
+
+          <p class="text-slate-400 mt-4">MGM College of CS & IT, Nanded</p>
+        </div>
+
+        <!-- ACTION CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- ADMIN LOGIN CARD -->
+          <div
+            class="bg-slate-900 border border-slate-800 rounded-xl p-10 transition duration-300 card-hover animate-float"
+          >
+            <h3 class="text-2xl font-semibold mb-4 text-slate-100">
+              Admin Login
+            </h3>
+
+            <p class="text-slate-400 mb-8 leading-relaxed">
+              Authorized college staff access for certificate generation,
+              student management and reports.
+            </p>
+
+            <button
+              class="w-full py-3 bg-slate-800 hover:bg-slate-700 transition rounded text-lg font-medium btn-press"
+            >
+              Login as Admin
+            </button>
+          </div>
+
+          <!-- SCAN CERTIFICATE CARD -->
+          <div
+            class="bg-slate-900 border border-slate-800 rounded-xl p-10 transition duration-300 card-hover animate-float"
+          >
+            <h3 class="text-2xl font-semibold mb-4 text-slate-100">
+              Scan or Validate Certificate
+            </h3>
+
+            <p class="text-slate-400 mb-8 leading-relaxed">
+              Verify event certificates instantly using QR code scanning and
+              validation system.
+            </p>
+
+            <button
+              class="w-full py-3 bg-slate-800 hover:bg-slate-700 transition rounded text-lg font-medium btn-press"
+            >
+              Scan & Validate
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-sm text-slate-500 py-6">
+      A Project developed by Rathod Shubham
+      <br />
+      MGM College of CS & IT, Nanded
+      <br />
+    </footer>
+  </body>
+</html>
+3

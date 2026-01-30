@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Verification Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes pop {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      .animate-pop {
+        animation: pop 0.6s ease forwards;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-slate-950 text-slate-200 min-h-screen flex items-center justify-center"
+  >
+    <div
+      class="bg-slate-900 border border-slate-800 rounded-xl p-10 text-center animate-pop"
+    >
+      <h1 class="text-3xl font-bold text-green-400 mb-4">
+        ✔ Certificate Valid
+      </h1>
+      <p class="text-slate-400 mb-6">
+        This certificate is verified and authentic.
+      </p>
+
+      <a
+        href="details.html"
+        class="px-6 py-2 bg-slate-800 hover:bg-slate-700 transition rounded"
+      >
+        View Details
+      </a>
+    </div>
+  </body>
+</html>

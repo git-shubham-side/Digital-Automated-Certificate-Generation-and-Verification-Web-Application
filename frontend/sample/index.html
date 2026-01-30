@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MGM College Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @keyframes slideIn {
+        0% {
+          opacity: 0;
+          transform: translateX(60px) scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0) scale(1);
+        }
+      }
+
+      .animate-slideIn {
+        animation: slideIn 0.8s ease forwards;
+      }
+      /* Custom Animations */
+      @keyframes floatSlow {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes glowLine {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-float {
+        animation: floatSlow 6s ease-in-out infinite;
+      }
+
+      .animate-fadeUp {
+        animation: fadeUp 1s ease forwards;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-slate-200 min-h-screen flex">
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-slate-900 border-r border-slate-800 p-6 space-y-6">
+      <h2 class="text-xl font-bold tracking-wide text-white">Admin Panel</h2>
+
+      <nav class="space-y-4 text-sm">
+        <a class="block hover:text-white transition">Dashboard</a>
+        <a class="block hover:text-white transition">Students</a>
+        <a class="block hover:text-white transition">Certificates</a>
+        <a class="block hover:text-white transition">QR Verification</a>
+        <a class="block hover:text-white transition">Reports</a>
+        <a class="block hover:text-red-400 transition">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="flex-1 p-8 space-y-10 overflow-y-auto">
+      <!-- HERO -->
+      <section class="text-center space-y-3 animate-fadeUp">
+        <h1 class="text-4xl font-extrabold tracking-widest animate-float">
+          MGM COLLEGE OF CS & IT
+        </h1>
+
+        <div class="mx-auto h-[2px] bg-slate-600 relative overflow-hidden w-64">
+          <div
+            class="absolute left-0 top-0 h-full bg-white animate-[glowLine_2s_ease-in-out_forwards]"
+          ></div>
+        </div>
+
+        <p class="text-slate-400 tracking-wide">NANDED</p>
+      </section>
+
+      <!-- STATS -->
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div
+          class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:-translate-y-2 transition"
+        >
+          <h3 class="text-sm text-slate-400">Total Students</h3>
+          <p class="text-3xl font-bold mt-2">0</p>
+        </div>
+
+        <div
+          class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:-translate-y-2 transition"
+        >
+          <h3 class="text-sm text-slate-400">Certificates Generated</h3>
+          <p class="text-3xl font-bold mt-2">0</p>
+        </div>
+
+        <div
+          class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:-translate-y-2 transition"
+        >
+          <h3 class="text-sm text-slate-400">Verified</h3>
+          <p class="text-3xl font-bold mt-2">0</p>
+        </div>
+
+        <div
+          class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:-translate-y-2 transition"
+        >
+          <h3 class="text-sm text-slate-400">Invalid Attempts</h3>
+          <p class="text-3xl font-bold mt-2">0</p>
+        </div>
+      </section>
+
+      <section
+        class="bg-slate-900 p-6 rounded-xl border border-slate-800 animate-fadeUp"
+      >
+        <h2 class="text-lg font-semibold mb-4">Generate Certificate</h2>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="certificate-templates.html">
+            <button
+              class="px-6 py-2 bg-slate-800 hover:bg-slate-700 transition rounded"
+            >
+              Lets's Go
+            </button>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

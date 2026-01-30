@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Select Certificate Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/certificate-types.css" />
+  </head>
+
+  <body class="text-slate-200 min-h-screen">
+    <!-- HEADER -->
+    <header
+      class="border-b border-slate-800 bg-slate-900 px-8 py-5 flex justify-between items-center"
+    >
+      <h1 class="text-xl font-bold tracking-wide">Certificate Templates</h1>
+
+      <a
+        href="index.html"
+        class="text-sm text-slate-400 hover:text-white transition"
+      >
+        ← Back to Dashboard
+      </a>
+    </header>
+
+    <!-- MAIN -->
+    <main class="p-10 max-w-7xl mx-auto">
+      <p class="text-slate-400 mb-10">
+        Select a certificate template based on the type of event
+      </p>
+
+      <!-- TEMPLATE GRID -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- SPORTS -->
+        <div
+          class="template-card bg-slate-900 border border-slate-800 rounded-xl p-8"
+        >
+          <h2 class="text-2xl font-semibold mb-3">🏆 Sports Event</h2>
+          <p class="text-slate-400 mb-6">
+            For tournaments, competitions, winners & participants.
+          </p>
+
+          <a
+            href="sports-certificate-types.html"
+            class="inline-block w-full text-center py-3 bg-slate-800 hover:bg-slate-700 rounded transition"
+          >
+            Use Template
+          </a>
+        </div>
+
+        <!-- TECHNICAL -->
+        <div
+          class="template-card bg-slate-900 border border-slate-800 rounded-xl p-8"
+        >
+          <h2 class="text-2xl font-semibold mb-3">💻 Technical Event</h2>
+          <p class="text-slate-400 mb-6">
+            Workshops, expos, hackathons, seminars.
+          </p>
+
+          <a
+            href="certificate.html?type=technical"
+            class="inline-block w-full text-center py-3 bg-slate-800 hover:bg-slate-700 rounded transition"
+          >
+            Use Template
+          </a>
+        </div>
+
+        <!-- CULTURAL -->
+        <div
+          class="template-card bg-slate-900 border border-slate-800 rounded-xl p-8"
+        >
+          <h2 class="text-2xl font-semibold mb-3">🎭 Cultural / Gathering</h2>
+          <p class="text-slate-400 mb-6">
+            Annual day, cultural fest, college gatherings.
+          </p>
+
+          <a
+            href="certificate.html?type=cultural"
+            class="inline-block w-full text-center py-3 bg-slate-800 hover:bg-slate-700 rounded transition"
+          >
+            Use Template
+          </a>
+        </div>
+
+        <!-- EXTRA ACTIVITY -->
+        <div
+          class="template-card bg-slate-900 border border-slate-800 rounded-xl p-8"
+        >
+          <h2 class="text-2xl font-semibold mb-3">⭐ Extra Activity</h2>
+          <p class="text-slate-400 mb-6">
+            NSS, volunteering, social work, clubs.
+          </p>
+
+          <a
+            href="certificate.html?type=extra"
+            class="inline-block w-full text-center py-3 bg-slate-800 hover:bg-slate-700 rounded transition"
+          >
+            Use Template
+          </a>
+        </div>
+
+        <!-- PARTICIPATION -->
+        <div
+          class="template-card bg-slate-900 border border-slate-800 rounded-xl p-8"
+        >
+          <h2 class="text-2xl font-semibold mb-3">📜 Participation</h2>
+          <p class="text-slate-400 mb-6">General participation certificates.</p>
+
+          <a
+            href="certificate.html?type=participation"
+            class="inline-block w-full text-center py-3 bg-slate-800 hover:bg-slate-700 rounded transition"
+          >
+            Use Template
+          </a>
+        </div>
+
+        <!-- APPRECIATION -->
+        <div
+          class="template-card bg-slate-900 border border-slate-800 rounded-xl p-8"
+        >
+          <h2 class="text-2xl font-semibold mb-3">🎖 Appreciation</h2>
+          <p class="text-slate-400 mb-6">
+            Appreciation & recognition certificates.
+          </p>
+
+          <a
+            href="certificate.html?type=appreciation"
+            class="inline-block w-full text-center py-3 bg-slate-800 hover:bg-slate-700 rounded transition"
+          >
+            Use Template
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-xs text-slate-500 py-8">
+      MGM College of CS & IT, Nanded • Certificate Management & Verification
+      System
+    </footer>
+  </body>
+</html>

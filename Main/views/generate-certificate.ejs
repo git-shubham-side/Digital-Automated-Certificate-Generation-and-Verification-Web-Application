@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generate Certificate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @keyframes fadeSlide {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fadeSlide {
+        animation: fadeSlide 0.8s ease forwards;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-slate-200 min-h-screen">
+    <!-- HEADER -->
+    <header class="border-b border-slate-800 p-6">
+      <h1 class="text-2xl font-bold tracking-wide">Generate Certificate</h1>
+      <p class="text-slate-400 text-sm">MGM College of CS & IT, Nanded</p>
+    </header>
+
+    <!-- MAIN -->
+    <main class="p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fadeSlide">
+      <!-- FORM -->
+      <form
+        class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-8 space-y-8"
+        method="post"
+        action="/generate-certificate"
+      >
+        <h2 class="text-lg font-semibold border-b border-slate-700 pb-3">
+          Student & Certificate Details
+        </h2>
+
+        <!-- BASIC DETAILS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="text-sm text-slate-400">Student Name *</label>
+            <input
+              type="text"
+              name="studentName"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-400">Enrollment / Roll No *</label>
+            <input
+              type="text"
+              name="rollNo"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-400">Course *</label>
+            <input
+              type="text"
+              name="course"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-400">Department *</label>
+            <input
+              type="text"
+              name="department"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-400">Academic Year *</label>
+            <select
+              name="academicYear"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded"
+            >
+              <option value="">Select</option>
+              <option>2025 - 2026</option>
+              <option>2024 - 2025</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-400">Semester / Year *</label>
+            <select
+              name="semester"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded"
+            >
+              <option value="">Select</option>
+              <option>First Year</option>
+              <option>Second Year</option>
+              <option>Third Year</option>
+              <option>Final Year</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CERTIFICATE DETAILS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="text-sm text-slate-400">Certificate Type *</label>
+            <select
+              name="certificateType"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded"
+            >
+              <option>Participation</option>
+              <option>Achievement</option>
+              <option>Completion</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-400">Event / Purpose *</label>
+            <input
+              type="text"
+              name="eventName"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-400">Event Date *</label>
+            <input
+              type="date"
+              name="eventDate"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm text-slate-400">Issued By *</label>
+            <input
+              type="text"
+              name="issuedBy"
+              placeholder="Event Coordinator / Department"
+              required
+              class="w-full mt-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded"
+            />
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="flex gap-4 pt-6">
+          <button
+            type="submit"
+            class="px-6 py-2 bg-slate-800 hover:bg-slate-700 transition rounded"
+          >
+            Generate Certificate
+          </button>
+          <button
+            type="reset"
+            class="px-6 py-2 border border-slate-700 hover:bg-slate-800 transition rounded"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+
+      <!-- STATUS PANEL -->
+      <aside
+        class="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-6"
+      >
+        <h2 class="text-lg font-semibold border-b border-slate-700 pb-3">
+          Status
+        </h2>
+
+        <div class="space-y-4 text-sm">
+          <div class="flex justify-between">
+            <span class="text-slate-400">Student Valid</span>
+            <span class="text-green-400">Yes</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-slate-400">Certificate ID</span>
+            <span class="text-slate-300">AUTO-GENERATED</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-slate-400">QR Verification</span>
+            <span class="text-slate-300">Enabled</span>
+          </div>
+        </div>
+
+        <div class="pt-4 space-y-3">
+          <button
+            class="w-full py-2 bg-slate-800 hover:bg-slate-700 transition rounded"
+          >
+            Preview Certificate
+          </button>
+          <button
+            class="w-full py-2 bg-slate-800 hover:bg-slate-700 transition rounded"
+          >
+            Download PDF
+          </button>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

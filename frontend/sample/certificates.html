@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Certificates | MGM College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeUp {
+        animation: fadeUp 0.6s ease forwards;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-slate-200 min-h-screen flex">
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-slate-900 border-r border-slate-800 p-6 space-y-6">
+      <h2 class="text-xl font-bold text-white">Admin Panel</h2>
+      <nav class="space-y-4 text-sm">
+        <a href="index.html" class="block hover:text-white">Dashboard</a>
+        <a href="students.html" class="block hover:text-white">Students</a>
+        <a class="block text-white font-semibold">Certificates</a>
+        <a class="block hover:text-white">QR Verification</a>
+        <a class="block hover:text-red-400">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="flex-1 p-8 space-y-8">
+      <!-- HEADER -->
+      <div class="flex justify-between items-center animate-fadeUp">
+        <h1 class="text-3xl font-bold">Certificates</h1>
+        <button class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded">
+          + Generate Certificate
+        </button>
+      </div>
+
+      <!-- SEARCH BAR -->
+      <div
+        class="bg-slate-900 border border-slate-800 rounded-xl p-6 grid grid-cols-1 md:grid-cols-3 gap-4 animate-fadeUp"
+      >
+        <input
+          type="text"
+          placeholder="Search by Student Name"
+          class="px-4 py-2 bg-slate-800 border border-slate-700 rounded focus:outline-none"
+        />
+
+        <input
+          type="text"
+          placeholder="Search by Certificate Reference ID"
+          class="px-4 py-2 bg-slate-800 border border-slate-700 rounded focus:outline-none"
+        />
+
+        <button
+          class="bg-slate-800 hover:bg-slate-700 transition rounded px-4 py-2"
+        >
+          Search
+        </button>
+      </div>
+
+      <!-- CERTIFICATE TABLE -->
+      <div
+        class="bg-slate-900 border border-slate-800 rounded-xl p-6 animate-fadeUp overflow-x-auto"
+      >
+        <table class="w-full text-sm">
+          <thead class="text-slate-400 border-b border-slate-700">
+            <tr>
+              <th class="py-3 text-left">Student Name</th>
+              <th class="py-3 text-left">Course</th>
+              <th class="py-3 text-left">Event</th>
+              <th class="py-3 text-left">Reference ID</th>
+              <th class="py-3 text-left">Status</th>
+              <th class="py-3 text-left">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="border-b border-slate-800 hover:bg-slate-800 transition">
+              <td class="py-3">Rahul Patil</td>
+              <td>BSc CS</td>
+              <td>Hardware Expo 2026</td>
+              <td class="text-slate-400">MGM-HEX-00124</td>
+              <td class="text-green-400 font-semibold">Verified</td>
+              <td class="space-x-3">
+                <button class="text-blue-400 hover:underline">View</button>
+                <button class="text-slate-300 hover:underline">Download</button>
+              </td>
+            </tr>
+
+            <tr class="border-b border-slate-800 hover:bg-slate-800 transition">
+              <td class="py-3">Sneha Deshmukh</td>
+              <td>BCA</td>
+              <td>Workshop on AI</td>
+              <td class="text-slate-400">MGM-AI-00987</td>
+              <td class="text-yellow-400 font-semibold">Pending</td>
+              <td class="space-x-3">
+                <button class="text-blue-400 hover:underline">View</button>
+                <button class="text-slate-300 hover:underline">Download</button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-800 transition">
+              <td class="py-3">Amit Pawar</td>
+              <td>BSc IT</td>
+              <td>Cyber Security Seminar</td>
+              <td class="text-slate-400">MGM-CS-00441</td>
+              <td class="text-red-400 font-semibold">Invalid</td>
+              <td class="space-x-3">
+                <button class="text-blue-400 hover:underline">View</button>
+                <button class="text-slate-300 hover:underline">Download</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

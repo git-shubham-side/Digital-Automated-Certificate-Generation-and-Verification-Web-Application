@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel to JSON Upload</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root {
+        --bg-image: url("college-bg.jpg"); /* baad me image daalna */
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-position: center;
+        opacity: 0.1;
+        z-index: -2;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: #020617ee;
+        z-index: -1;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulseBorder {
+        0%,
+        100% {
+          border-color: #334155;
+        }
+        50% {
+          border-color: #64748b;
+        }
+      }
+
+      .animate-fadeUp {
+        animation: fadeUp 0.9s ease forwards;
+      }
+
+      .pulse-border {
+        animation: pulseBorder 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-slate-950 text-slate-200 min-h-screen flex items-center justify-center"
+  >
+    <div class="w-full max-w-md px-6 animate-fadeUp">
+      <!-- TITLE -->
+      <div class="text-center mb-8">
+        <h1 class="text-2xl font-bold tracking-wider">
+          Upload your Excel file
+        </h1>
+        <p class="text-slate-400 text-sm mt-2">Event’s E-Certificate System</p>
+      </div>
+
+      <!-- FORM CARD -->
+      <form
+        action="http://localhost:5000/excel-to-json"
+        method="POST"
+        enctype="multipart/form-data"
+        class="bg-slate-900 border border-slate-800 rounded-xl p-8 space-y-6"
+      >
+        <!-- FILE INPUT -->
+        <!-- FILE INPUT -->
+        <label
+          class="block border-2 border-dashed rounded-lg p-6 text-center cursor-pointer border-slate-700 pulse-border hover:bg-slate-800 transition"
+        >
+          <input
+            type="file"
+            name="file"
+            class="hidden"
+            onchange="showFileName(this)"
+          />
+
+          <p class="text-lg font-medium">Upload Excel File</p>
+          <p class="text-slate-400 text-sm mt-2">(.xls / .xlsx)</p>
+
+          <!-- FILE NAME -->
+          <p id="fileName" class="text-sm text-slate-300 mt-3 hidden"></p>
+        </label>
+
+        <!-- BUTTON -->
+        <button
+          type="submit"
+          class="w-full py-3 bg-slate-800 hover:bg-slate-700 transition rounded font-semibold tracking-wide active:scale-95"
+        >
+          Upload
+        </button>
+      </form>
+
+      <!-- FOOTER -->
+      <!-- <p class="text-center text-xs text-slate-500 mt-6">
+        Backend API: /excel-to-json
+      </p> -->
+    </div>
+    <script>
+      function showFileName(input) {
+        const fileNameEl = document.getElementById("fileName");
+
+        if (input.files.length > 0) {
+          fileNameEl.textContent = "Selected: " + input.files[0].name;
+          fileNameEl.classList.remove("hidden");
+        } else {
+          fileNameEl.classList.add("hidden");
+        }
+      }
+    </script>
+  </body>
+</html>

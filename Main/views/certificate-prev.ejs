@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Certificate Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/certificate-prev.css" />
+  </head>
+
+  <body class="bg-slate-200 flex justify-center items-center min-h-screen">
+    <div class="certificate-wrapper">
+      <div class="certificate">
+        <!-- Borders -->
+        <div class="outer-border"></div>
+        <div class="inner-border"></div>
+
+        <!-- CONTENT -->
+        <div
+          class="relative h-full flex flex-col justify-between text-center px-16 py-14"
+        >
+          <!-- TOP -->
+          <div>
+            <p class="text-sm tracking-widest text-slate-600 uppercase">
+              MGM College of CS & IT, Nanded
+            </p>
+
+            <h1 class="text-4xl font-bold tracking-widest text-slate-800 mt-4">
+              CERTIFICATE
+            </h1>
+
+            <p class="uppercase text-sm text-slate-500 tracking-wider mt-2">
+              Certificate of
+              <span class="font-semibold"><%= certificateType %></span>
+            </p>
+          </div>
+
+          <!-- LINE -->
+          <div class="flex justify-center my-6">
+            <div
+              class="h-[2px] w-56 bg-gradient-to-r from-transparent via-yellow-500 to-transparent"
+            ></div>
+          </div>
+
+          <!-- BODY -->
+          <div class="space-y-6 text-slate-700">
+            <p class="italic text-slate-500">
+              This certificate is proudly presented to
+            </p>
+
+            <div class="text-3xl font-semibold tracking-wide text-slate-800">
+              <%= studentName %>
+            </div>
+
+            <p class="text-sm text-slate-500">
+              Enrollment / Roll No: <strong><%= rollNo %></strong>
+            </p>
+
+            <p class="leading-relaxed text-sm max-w-2xl mx-auto">
+              for participating in the
+              <strong><%= eventName %></strong>
+              conducted on
+              <strong><%= eventDate %></strong>
+              as a student of
+              <strong><%= course %></strong>,
+              <strong><%= department %></strong>
+              during the academic year
+              <strong><%= academicYear %></strong>
+              (<%= semester %>).
+            </p>
+
+            <p class="text-sm leading-relaxed max-w-xl mx-auto">
+              The participation, discipline, and enthusiasm shown during the
+              event were commendable and contributed to its successful
+              execution.
+            </p>
+
+            <p class="text-xs tracking-widest text-slate-400 uppercase">
+              Awarded in recognition of dedication and performance
+            </p>
+          </div>
+
+          <!-- BOTTOM -->
+          <div class="flex justify-between items-end mt-10">
+            <!-- SIGN -->
+            <div class="text-left">
+              <p class="text-sm font-medium text-slate-700"><%= issuedBy %></p>
+              <p class="text-xs text-slate-500">
+                Event Coordinator / Authority
+              </p>
+            </div>
+
+            <!-- REF -->
+            <div class="text-right">
+              <p class="text-xs text-slate-500">Certificate ID</p>
+              <p class="text-sm tracking-widest text-slate-700">
+                <!-- Certificate ID Remaining -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
